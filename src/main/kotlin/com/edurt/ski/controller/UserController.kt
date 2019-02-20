@@ -2,10 +2,9 @@ package com.edurt.ski.controller
 
 import com.edurt.ski.model.UserModel
 import com.edurt.ski.service.UserService
-import org.springframework.web.bind.annotation.PathVariable
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.data.domain.Page
+import org.springframework.data.domain.PageRequest
+import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping(value = "user")
@@ -18,5 +17,8 @@ class UserController(private val userService: UserService) {
         userModel.name = name
         return this.userService.save(userModel)
     }
+
+    @GetMapping(value = "list")
+    fun get(): Page<UserModel> = this.userService.getAll(PageRequest(0, 10))
 
 }
