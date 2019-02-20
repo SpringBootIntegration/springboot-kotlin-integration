@@ -9,8 +9,7 @@ SpringBoot Kotlin Integration is a open source springboot, kotlin integration ex
 |Name|Version|
 |:---:|---|
 |Java|1.8+|
-|SpringBoot|1.5.x|
-|Spring Security|-| 
+|SpringBoot|2.1.x|
 |Kotlin|1.2.x|
 
 ### Contributors(In no particular order)
